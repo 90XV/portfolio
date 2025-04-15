@@ -1,8 +1,5 @@
-from flask import Flask, render_template, url_for
+from __main__ import app
 
-app = Flask(__name__)
-
-#import routes
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -18,6 +15,3 @@ def contact():
 @app.route('/profile', methods=['GET'])
 def profile():
     return render_template("profile.html")
-
-if __name__ == '__main__':
-    app.run()
