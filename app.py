@@ -6,7 +6,6 @@ app = Flask(__name__)
 def page_not_found(error):
     return redirect(url_for('index'))
 
-#import routes
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -31,5 +30,9 @@ def fyp():
 def personal():
     return render_template("personal.html") 
 
+#POST STUFF
+@app.route('/submit_contact', methods=['POST'])
+def submit_contact():
+    return render_template("personal.html")
 if __name__ == '__main__':
     app.run()

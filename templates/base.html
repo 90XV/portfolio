@@ -16,18 +16,21 @@
         <h1 class="main-title">adham.forum</h1>
     <div class="nav-bar">
     <ul> 
-          <li><a href="home">Home</a></li>
-          <li><a href="skills">Skills</a></li>
+          <li><a href="home" {% if request.endpoint == 'home' %}class="active"{% endif %}>Home</a></li>
+          <li><a href="skills" {% if request.endpoint == 'skills' %}class="active"{% endif %}>Skills</a></li>
           <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Projects</a>
               <div class="dropdown-content">
-              <a href="personal">Personal project</a>
-              <a href="fyp">Final Year Project</a>
+              <a href="personal" {% if request.endpoint == 'personal' %}class="active"{% endif %}>Personal project</a>
+              <a href="fyp" {% if request.endpoint == 'fyp' %}class="active"{% endif %}>Final Year Project</a>
           </li>
-          <li><a href="contact">Contact</a></li>
+          <li><a href="contact" {% if request.endpoint == 'contact' %}class="active"{% endif %}>Contact</a></li>
     </div>
     {% block content %}
     {% endblock %} 
     </div>
+    <footer class ="footer-text">
+        This is the footer
+    </footer>
 </body>
 </html>
